@@ -3,19 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c && http-server public/"
+    "build": "node build.js",
+    "start": "npm run build && http-server public/"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
-    "http-server": "^14.1.1"
+    "esbuild": "^0.14.47",
+    "esbuild-svelte": "^0.7.1",
+    "http-server": "^14.1.1",
+    "svelte": "^3.0.0"
   },
   "dependencies": {
     "sirv-cli": "^2.0.0"
