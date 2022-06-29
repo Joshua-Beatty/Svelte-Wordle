@@ -17,12 +17,7 @@
     </p>
   </button>
 {:else}
-  <button
-    on:click={() => callback(key)}
-    class:off
-    class:yellow
-    class:green
-  >
+  <button on:click={() => callback(key)} class:off class:yellow class:green>
     <p>
       {key.toUpperCase()}
     </p>
@@ -30,28 +25,29 @@
 {/if}
 
 <style>
-	@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialicons/v133/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
-}
+  @font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v133/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+      format("woff2");
+  }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -moz-font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale;
-}
+  .material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    -moz-osx-font-smoothing: grayscale;
+  }
   button {
     color: black;
     background: lightgrey;
@@ -93,9 +89,9 @@
   .green {
     background: #00aa00;
   }
-	.off:active{
-		background: #2d2d2d
-	}
+  .off:active {
+    background: #2d2d2d;
+  }
   .yellow:active {
     background: #b7b700;
   }

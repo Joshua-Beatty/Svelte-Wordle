@@ -1,29 +1,29 @@
 <script>
   import Key from "./Key.svelte";
-	import { createEventDispatcher } from 'svelte';
-	const dispatch = createEventDispatcher();
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
   export let off = [];
   export let yellow = [];
   export let green = [];
-  function callback(key){
-		if(key == "enter"){
-			dispatch('enter', key);
-		} else if(key == "backspace"){
-			dispatch('backspace', key);
-		} else {
-			dispatch('keypress', key);
-		}
-	};
+  function callback(key) {
+    if (key == "enter") {
+      dispatch("enter", key);
+    } else if (key == "backspace") {
+      dispatch("backspace", key);
+    } else {
+      dispatch("keypress", key);
+    }
+  }
 
-	function handleKeydown(event){
-		if(event.keyCode < 65 || event.keyCode > 90){
-			if(![8, 13].includes(event.keyCode)){
-				return;
-			}
-		}
-		callback(event.key.toLowerCase())
-	}
-	
+  function handleKeydown(event) {
+    if (event.keyCode < 65 || event.keyCode > 90) {
+      if (![8, 13].includes(event.keyCode)) {
+        return;
+      }
+    }
+    callback(event.key.toLowerCase());
+  }
+
   const keyboard = [
     ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
     ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
@@ -31,7 +31,7 @@
   ];
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:window on:keydown={handleKeydown} />
 <div id="keyboard">
   {#each keyboard as row}
     <div class="row">
@@ -53,7 +53,7 @@
 <style>
   #keyboard {
     width: 100%;
-		margin-top:auto;
+    margin-top: auto;
   }
   .row {
     width: 100%;
